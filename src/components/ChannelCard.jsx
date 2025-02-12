@@ -4,7 +4,7 @@ import { CheckCircle } from "@mui/icons-material";
 import { Link } from "react-router";
 import { demoProfilePicture } from "../utils/constants";
 
-export default function ChannelCard({ channelDetail }) {
+export default function ChannelCard({ channelDetail, marginTop, indexPfp }) {
   return (
     <Box
       sx={{
@@ -13,9 +13,10 @@ export default function ChannelCard({ channelDetail }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        width: { xs: "356px", md: "320px" },
+        width: { xs: "356px", md: "300px" },
         height: "320px",
-        m: "auto",
+        margin: "auto",
+        marginTop,
       }}
     >
       <Link to={`/channel/${channelDetail?.channelId}`}>
@@ -29,8 +30,10 @@ export default function ChannelCard({ channelDetail }) {
           }}
         >
           <CardMedia
-            image={channelDetail?.thumbnail[0]?.url || demoProfilePicture}
-            alt={channelDetail?.channelTitle}
+            image={
+              channelDetail?.thumbnail[indexPfp]?.url || demoProfilePicture
+            }
+            alt={channelDetail?.title}
             sx={{
               borderRadius: "50%",
               height: "180px",
@@ -40,12 +43,13 @@ export default function ChannelCard({ channelDetail }) {
             }}
           />
           <Typography variant="h6">
-            {channelDetail?.channelTitle}
+            {channelDetail?.title}
             <CheckCircle sx={{ fontSize: 14, color: "grey", ml: "5px" }} />
           </Typography>
-          {channelDetail?.subscriberCount && (
-            <Typography>{channelDetail?.subscriberCount}</Typography>
-          )}
+          <Typography>{channelDetail?.subscriberCount}</Typography>
+          <Typography sx={{ color: "grey" }}>
+            {channelDetail?.channelHandle}
+          </Typography>
         </CardContent>
       </Link>
     </Box>
