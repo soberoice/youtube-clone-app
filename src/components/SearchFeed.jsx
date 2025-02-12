@@ -1,7 +1,26 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { Box, Typography } from "@mui/material";
+import { useParams } from "react-router";
+import Videos from "./Videos";
+import { fetchFromAPI } from "../utils/fetchFromApi";
 
-function searchFeed() {
-  return <div>Search feed</div>;
+export default function SearchFeed() {
+  const [videos, setVideos] = useState([]);
+  const { searchTerm } = useParams();
+
+  useEffect(() => {
+    fetchFromAPI(`search?part=snippet&query=${searchTerm}`).then((data) =>
+      setVideos(data.data)
+    );
+  }, [searchTerm]);
+
+  return (
+    <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+      <Typography variant="h4" fontWeight="bold" mb={2} sx={{ color: "white" }}>
+        {searchTerm}
+        <span style={{ color: "#F31503" }}> Search Results</span>
+      </Typography>
+      <Videos videos={videos} indexImg={1} />
+    </Box>
+  );
 }
-
-export default searchFeed;

@@ -16,6 +16,7 @@ function NavBar() {
         top: "0",
         justifyContent: "space-between",
       }}
+      zIndex={10}
     >
       <Link to="/" style={{ display: "flex", alignItems: "center" }}>
         <img src={logo} alt="logo" height={45} />
