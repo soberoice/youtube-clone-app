@@ -18,8 +18,9 @@ export default function VideoCard({
     <Card
       sx={{
         width: {
+          xs: "100%",
+          sm: "358px",
           md: "300px",
-          xs: "90%",
           boxShadow: "none",
           borderRadius: 0,
         },
@@ -29,7 +30,7 @@ export default function VideoCard({
         <CardMedia
           image={thumbnail[index]?.url || demoThumbnailUrl}
           alt={title}
-          sx={{ width: 358, height: 180 }}
+          sx={{ width: { xs: "100%", sm: "358px", md: "300px" }, height: 180 }}
         />
       </Link>
       <CardContent sx={{ backgroundColor: "#1e1e1e", height: "100px" }}>
