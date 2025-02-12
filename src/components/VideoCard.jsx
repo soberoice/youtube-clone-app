@@ -19,7 +19,7 @@ export default function VideoCard({
       sx={{
         width: {
           md: "300px",
-          xs: "100%",
+          xs: "90%",
           boxShadow: "none",
           borderRadius: 0,
         },
