@@ -5,8 +5,6 @@ import VideoCard from "./VideoCard";
 
 export default function Videos({ videos, indexImg, direction }) {
   if (!videos?.length) return "loading...";
-
-  console.log(videos);
   return (
     <Stack
       direction={direction || "row"}

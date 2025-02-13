@@ -22,7 +22,6 @@ export default function app() {
           </Routes>
         </Box>
       </BrowserRouter>
-      ;
     </div>
   );
 }
