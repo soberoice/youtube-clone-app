@@ -7,18 +7,21 @@ import { CheckCircle } from "@mui/icons-material";
 
 import { Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromApi";
+import CommentContainer from "./CommentContainer";
 
 function VideoDetails() {
   const [videoDetail, setVideoDetail] = useState(null);
   const [videos, setVideos] = useState([]);
+  const [comments, setComment] = useState([]);
   const { id } = useParams();
   console.log(videos);
 
   useEffect(() => {
     fetchFromAPI(`video?id=${id}`).then((data) => setVideoDetail(data));
     fetchFromAPI(`related?id=${id}`).then((data) => setVideos(data.data));
+    fetchFromAPI(`comments?id=${id}`).then((data) => setComment(data));
   }, [id]);
-
+  console.log(comments);
   if (!videoDetail) return "loading....";
 
   return (
@@ -72,6 +75,9 @@ function VideoDetails() {
           <Videos videos={videos} indexImg={1} direction="column" />
         </Box>
       </Stack>
+      <Box>
+        <CommentContainer comments={comments} />
+      </Box>
     </Box>
   );
 }

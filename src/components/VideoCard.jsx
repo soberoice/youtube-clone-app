@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
-import { Typography, Card, CardContent, CardMedia } from "@mui/material";
+import { Typography, Card, CardContent, CardMedia, Stack } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
 
 import {
@@ -11,7 +11,15 @@ import {
   demoVideoUrl,
 } from "../utils/constants";
 export default function VideoCard({
-  video: { videoId, thumbnail, title, channelId, channelTitle },
+  video: {
+    videoId,
+    thumbnail,
+    title,
+    channelId,
+    channelTitle,
+    lengthText,
+    publishedText,
+  },
   index,
 }) {
   return (
@@ -40,10 +48,33 @@ export default function VideoCard({
           </Typography>
         </Link>
         <Link to={channelId ? `/channel/${channelId}` : demoChannelUrl}>
-          <Typography variant="subtitle1" fontWeight="bold" color="grey">
-            {channelTitle || demoChannelTitle}
-            <CheckCircle sx={{ fontSize: 12, color: "grey", ml: "5px" }} />
-          </Typography>
+          <Stack direction="row" display="flex" justifyContent="space-between">
+            <Typography
+              variant="subtitle1"
+              fontWeight="bold"
+              fontSize="14px"
+              color="grey"
+            >
+              {channelTitle || demoChannelTitle}
+              <CheckCircle sx={{ fontSize: 12, color: "grey", ml: "5px" }} />
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              fontWeight="bold"
+              fontSize="14px"
+              color="grey"
+            >
+              {publishedText}
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              fontWeight="bold"
+              fontSize="14px"
+              color="grey"
+            >
+              {lengthText}
+            </Typography>
+          </Stack>
         </Link>
       </CardContent>
     </Card>
