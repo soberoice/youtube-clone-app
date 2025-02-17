@@ -29,9 +29,9 @@ export default function VideoCard({
           xs: "100%",
           sm: "358px",
           md: "320px",
-          boxShadow: "none",
-          borderRadius: 0,
         },
+        boxShadow: "none",
+        borderRadius: 0,
       }}
     >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
@@ -55,7 +55,7 @@ export default function VideoCard({
               fontSize="14px"
               color="grey"
             >
-              {channelTitle || demoChannelTitle}
+              {channelTitle.slice(0, 12) || demoChannelTitle}
               <CheckCircle sx={{ fontSize: 12, color: "grey", ml: "5px" }} />
             </Typography>
             <Typography

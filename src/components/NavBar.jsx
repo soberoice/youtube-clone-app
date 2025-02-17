@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import { Link } from "react-router";
 
 import { logo } from "../utils/constants";
@@ -19,9 +19,19 @@ function NavBar() {
       zIndex={10}
     >
       <Link to="/" style={{ display: "flex", alignItems: "center" }}>
-        <img src={logo} alt="logo" height={45} />
+        <img src={logo} alt="logo" height={35} />
       </Link>
-      <SearchBar />
+      <Stack direction="row" gap="15px">
+        <SearchBar />
+        <Link to="/signup">
+          <Button
+            variant="contained"
+            style={{ background: "#F31503", margin: "auto 0px" }}
+          >
+            Sign up
+          </Button>
+        </Link>
+      </Stack>
     </Stack>
   );
 }

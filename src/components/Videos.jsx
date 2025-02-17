@@ -10,6 +10,7 @@ export default function Videos({ videos, indexImg, direction }) {
       direction={direction || "row"}
       flexWrap="wrap"
       justifyContent="start"
+      alignItems="start"
       gap={2}
     >
       {videos.map((item, index) => (
