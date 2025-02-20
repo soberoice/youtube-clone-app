@@ -72,7 +72,9 @@ export default function ProfilePage() {
               <Typography variant="h6">
                 {currentUser.email.slice(0, 3)}
               </Typography>
-              <Typography sx={{ color: "grey" }}>@{email}</Typography>
+              <Typography sx={{ color: "grey" }}>
+                @{currentUser.email}
+              </Typography>
             </CardContent>
             <Button
               variant="contained"
