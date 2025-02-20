@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { Avatar, Box, Button, CardContent, Typography } from "@mui/material";
 import { useAuth } from "../contexts/AuthContext";
+import { ExitToApp, Logout } from "@mui/icons-material";
 
 export default function ProfilePage() {
   const { logout, currentUser } = useAuth();
@@ -86,7 +87,13 @@ export default function ProfilePage() {
               fullWidth
               onClick={handlelogout}
             >
-              log out
+              log out{" "}
+              <Logout
+                sx={{
+                  fontSize: "20px",
+                  margin: "auto 10px",
+                }}
+              />
             </Button>
           </Link>
         </Box>

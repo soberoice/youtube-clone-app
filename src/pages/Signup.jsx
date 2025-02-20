@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { Grid2 } from "@mui/material";
 import { Link, useNavigate } from "react-router";
 import { useAuth } from "../contexts/AuthContext";
+import { Login } from "@mui/icons-material";
 
 export default function Signup() {
   const emailRef = useRef();
@@ -140,7 +141,7 @@ export default function Signup() {
             type="submit"
             disabled={loading}
           >
-            sign up
+            sign up <Login sx={{ margin: "auto 10px", fontSize: "20px" }} />
           </Button>
         </form>
         <div style={{ marginTop: "1em" }}>
