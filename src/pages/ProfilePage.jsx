@@ -7,7 +7,6 @@ export default function ProfilePage() {
   const { logout, currentUser } = useAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const email = currentUser.email;
 
   async function handlelogout() {
     setError("");
@@ -67,10 +66,12 @@ export default function ProfilePage() {
                   border: "1px solid #e3e3e3",
                 }}
               >
-                {email.toUpperCase().slice(0, 2)}
+                {currentUser.email.toUpperCase().slice(0, 2)}
               </Avatar>
 
-              <Typography variant="h6">{email.slice(0, 3)}</Typography>
+              <Typography variant="h6">
+                {currentUser.email.slice(0, 3)}
+              </Typography>
               <Typography sx={{ color: "grey" }}>@{email}</Typography>
             </CardContent>
             <Button

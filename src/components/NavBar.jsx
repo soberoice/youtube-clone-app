@@ -7,7 +7,6 @@ import { useAuth } from "../contexts/AuthContext";
 
 function NavBar() {
   const { currentUser } = useAuth();
-  const email = currentUser.email.toUpperCase();
   return (
     <Stack
       direction="row"
@@ -39,7 +38,7 @@ function NavBar() {
           </Link>
         ) : (
           <Link to={"/profile"}>
-            <Avatar>{email.slice(0, 2)}</Avatar>
+            <Avatar>{currentUser.email.toUpperCase().slice(0, 2)}</Avatar>
           </Link>
         )}
       </Stack>
