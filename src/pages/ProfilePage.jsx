@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { Avatar, Box, Button, CardContent, Typography } from "@mui/material";
+import {
+  Alert,
+  Avatar,
+  Box,
+  Button,
+  CardContent,
+  Typography,
+} from "@mui/material";
 import { useAuth } from "../contexts/AuthContext";
-import { ExitToApp, Logout } from "@mui/icons-material";
+import { Logout } from "@mui/icons-material";
 
 export default function ProfilePage() {
   const { logout, currentUser } = useAuth();
@@ -95,6 +102,11 @@ export default function ProfilePage() {
                 }}
               />
             </Button>
+            {error && (
+              <Alert severity="error" sx={{ marginTop: "10px" }}>
+                {error}
+              </Alert>
+            )}
           </Link>
         </Box>
       </Box>
