@@ -27,10 +27,11 @@ export default function Signup() {
       await signup(emailRef.current.value, passwordRef.current.value);
       navigate("/");
     } catch {
-      console.log(error);
+      console.log(error.message);
       setError("Failed to create an account");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   }
 
   return (
@@ -74,7 +75,7 @@ export default function Signup() {
                 "& .MuiInputLabel-root.Mui-focused": { color: "gray" }, // Label color when focused
               }}
               label="Email"
-              ref={emailRef}
+              inputRef={emailRef}
               required
             />
             <TextField
@@ -101,7 +102,7 @@ export default function Signup() {
                 "& .MuiInputLabel-root.Mui-focused": { color: "gray" }, // Label color when focused
               }}
               label="Password"
-              ref={passwordRef}
+              inputRef={passwordRef}
               type="password"
             />
             <TextField
@@ -128,7 +129,7 @@ export default function Signup() {
                 "& .MuiInputLabel-root.Mui-focused": { color: "gray" }, // Label color when focused
               }}
               label="Confirm Password"
-              ref={confirmPasswordRef}
+              inputRef={confirmPasswordRef}
               type="password"
             />
           </Stack>

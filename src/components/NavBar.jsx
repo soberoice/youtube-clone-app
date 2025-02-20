@@ -1,10 +1,13 @@
-import { Button, Stack } from "@mui/material";
+import { Avatar, Button, Stack } from "@mui/material";
 import { Link } from "react-router";
 
 import { logo } from "../utils/constants";
 import SearchBar from "./SearchBar";
+import { useAuth } from "../contexts/AuthContext";
 
 function NavBar() {
+  const { currentUser } = useAuth();
+  const email = currentUser.email.toUpperCase();
   return (
     <Stack
       direction="row"
@@ -23,14 +26,22 @@ function NavBar() {
       </Link>
       <Stack direction="row" gap="15px">
         <SearchBar />
-        <Link to="/signup">
-          <Button
-            variant="contained"
-            style={{ background: "#F31503", margin: "auto 0px" }}
-          >
-            Sign up
-          </Button>
-        </Link>
+
+        {!currentUser ? (
+          <Link to="/signup">
+            {" "}
+            <Button
+              variant="contained"
+              style={{ background: "#F31503", margin: "auto 0px" }}
+            >
+              Sign up
+            </Button>
+          </Link>
+        ) : (
+          <Link to={"/profile"}>
+            <Avatar>{email.slice(0, 2)}</Avatar>
+          </Link>
+        )}
       </Stack>
     </Stack>
   );
