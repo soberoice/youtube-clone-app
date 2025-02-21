@@ -22,7 +22,7 @@ export default function SearchFeed() {
         height: "90vh",
         flex: 2,
         margin: { xs: "auto" },
-        width: { xs: "350px", md: "100%" },
+        width: { xs: "340px", md: "100%" },
       }}
     >
       <Typography variant="h4" fontWeight="bold" mb={2} sx={{ color: "white" }}>

@@ -59,7 +59,7 @@ function Feed() {
         </Typography>
         <Box
           sx={{
-            width: { xs: "350px", md: "100%" },
+            width: { xs: "340px", md: "100%" },
           }}
         >
           <Videos videos={videos} indexImg={1} />
