@@ -26,7 +26,7 @@ export default function VideoCard({
     <Card
       sx={{
         width: {
-          xs: "340px",
+          xs: "320px",
           sm: "358px",
           md: "320px",
         },
@@ -39,7 +39,7 @@ export default function VideoCard({
           image={thumbnail[index]?.url || demoThumbnailUrl}
           alt={title}
           sx={{
-            width: { xs: "340px", sm: "358px", md: "320px" },
+            width: { xs: "320px", sm: "358px", md: "320px" },
             height: 180,
           }}
         />

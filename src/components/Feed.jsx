@@ -40,7 +40,6 @@ function Feed() {
         </Typography>
       </Box>
       <Box
-        p={2}
         sx={{
           overflowY: "auto",
           height: "90vh",
@@ -59,7 +58,7 @@ function Feed() {
         </Typography>
         <Box
           sx={{
-            width: { xs: "340px", md: "100%" },
+            width: { xs: "320px", md: "100%" },
           }}
         >
           <Videos videos={videos} indexImg={1} />
