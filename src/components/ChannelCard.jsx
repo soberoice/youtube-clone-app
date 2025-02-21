@@ -13,7 +13,7 @@ export default function ChannelCard({ channelDetail, marginTop, indexPfp }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        width: { xs: "356px", md: "300px" },
+        width: { xs: "320px", md: "300px" },
         height: "320px",
         margin: "auto",
         marginTop,
@@ -33,11 +33,11 @@ export default function ChannelCard({ channelDetail, marginTop, indexPfp }) {
             image={
               channelDetail?.thumbnail[indexPfp]?.url || demoProfilePicture
             }
-            alt={channelDetail?.title}
+            alt={channelDetail?.title.slice(0, 15)}
             sx={{
               borderRadius: "50%",
-              height: "180px",
-              width: "180px",
+              height: "220px",
+              width: "220px",
               mb: 2,
               border: "1px solid #e3e3e3",
             }}
