@@ -5,6 +5,9 @@ import { Link } from "react-router";
 import { demoProfilePicture } from "../utils/constants";
 
 export default function ChannelCard({ channelDetail, marginTop, indexPfp }) {
+  {
+    console.log(channelDetail);
+  }
   return (
     <Box
       sx={{
