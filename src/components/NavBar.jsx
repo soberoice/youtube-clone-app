@@ -31,7 +31,7 @@ function NavBar() {
             {" "}
             <Button
               variant="contained"
-              style={{ background: "#F31503", margin: "auto 0px" }}
+              style={{ background: "#F31503", margin: "5px 0px" }}
             >
               Sign up
             </Button>
