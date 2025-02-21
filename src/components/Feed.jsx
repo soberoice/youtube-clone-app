@@ -15,7 +15,11 @@ function Feed() {
   }, [selectedCategory]);
 
   return (
-    <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
+    <Stack
+      sx={{
+        flexDirection: { sx: "column", md: "row" },
+      }}
+    >
       <Box
         sx={{
           height: { sx: "auto", md: "92vh" },
@@ -35,7 +39,15 @@ function Feed() {
           copyright 2025 Soberoice
         </Typography>
       </Box>
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+      <Box
+        p={2}
+        sx={{
+          overflowY: "auto",
+          height: "90vh",
+          flex: 2,
+          margin: { xs: "auto" },
+        }}
+      >
         <Typography
           variant="h4"
           fontWeight="bold"
@@ -45,7 +57,13 @@ function Feed() {
           {selectedCategory}
           <span style={{ color: "#F31503" }}> Videos</span>
         </Typography>
-        <Videos videos={videos} indexImg={1} />
+        <Box
+          sx={{
+            width: { xs: "350px", md: "100%" },
+          }}
+        >
+          <Videos videos={videos} indexImg={1} />
+        </Box>
       </Box>
     </Stack>
   );

@@ -1,4 +1,11 @@
-import { Alert, Button, Stack, TextField, Typography } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React, { useRef, useState } from "react";
 
 import { Grid2 } from "@mui/material";
@@ -43,7 +50,13 @@ export default function Signup() {
       justify="center"
       style={{ minHeight: "85vh", color: "white" }}
     >
-      <div style={{ margin: "auto", textAlign: "center", width: "320px" }}>
+      <Box
+        sx={{
+          margin: "auto",
+          textAlign: "center",
+          width: { xs: "320px", sm: "360px", md: "400px" },
+        }}
+      >
         <Typography variant="h5">Sign Up</Typography>
         {error && (
           <Alert severity="error" style={{ marginTop: "1em" }}>
@@ -152,7 +165,7 @@ export default function Signup() {
             </Link>
           </Typography>
         </div>
-      </div>
+      </Box>
     </Grid2>
   );
 }
